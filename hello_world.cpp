@@ -2,19 +2,19 @@
 #include <mpi.h>
 
 int main(int argc, char** argv) {
-  // Initialisation
-  int MPI_Init(int *argc, char ***argv);
+  // Inicialização
+  MPI_Init(&argc, &argv);
 
-  // Reading size and rank
+  // Leitura de tamanho e rank
   int size, rank;
-    MPI_Comm_size(MPI_COMM_WORLD, &size);
-    MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+  MPI_Comm_size(MPI_COMM_WORLD, &size);
+  MPI_Comm_rank(MPI_COMM_WORLD, &rank);
 
-  // Printing
+  // Impressão
   std::cout << "Hello world, from process #" << rank << std::endl;
   
-  // Finalisation
-  int MPI_Finalize();
+  // Finalização
+  MPI_Finalize();
 
   return 0;
 }
